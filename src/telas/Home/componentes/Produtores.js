@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 
-import { carregaProdutores } from '../../../servicos/carregaDados';
 import Produtor from './Produtor';
+import useProdutores from '../../../hooks/useProdutores'
 
 
 export default function Produtores({topo: Topo}){
-    const [titulo, setTitulo] = useState('');
-    const [lista, setLista] = useState('');
+    const [titulo, lista] = useProdutores();
     
-    /**USEREFFECT É UMA FUNÇÃO DENTRO DO REACT, ONDE ELE FAZ UM EFEITO QUANDO O COMPONENTE FOR CARREGADO*/
-    useEffect(() => {
-        const retorno = carregaProdutores();
-        setTitulo(retorno.titulo);
-        setLista(retorno.lista);
-        console.log(retorno)
-    }, []);
-
     const TopoLista = () => {
         return <>
             <Topo />
