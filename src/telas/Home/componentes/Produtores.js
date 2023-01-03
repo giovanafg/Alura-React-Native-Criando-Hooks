@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 
 import { carregaProdutores } from '../../../servicos/carregaDados';
+import Produtor from './Produtor';
 
 
 export default function Produtores({topo: Topo}){
@@ -27,7 +28,7 @@ export default function Produtores({topo: Topo}){
          /**DATA - LISTA */
          data={lista}
          /**PARA RENDERIZAR O QUE ESTÁ DENTRO DA LISTA */
-         renderItem={({item: {nome}}) => <Text>{nome}</Text>}
+         renderItem={({item }) => <Produtor {...item} />}
          /**DECLARA QUAL A KEY DA LISTA */
          keyExtractor={({nome}) => nome}
          /**HEADER ONDE IRÁ COMPOR O TITULO DA LISTA */
