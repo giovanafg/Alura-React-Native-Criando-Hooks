@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from 'react-native';
+
 import Estrela from "./Estrela";
-
-
 
 export default function Estrelas({
     quantidade: quantidadeAntiga,
@@ -16,12 +15,11 @@ export default function Estrelas({
         for (let i = 0; i < 5; i++){
             listaEstrelas.push(
                 <Estrela 
-                key={i}
-                onPress={() => setQuantidade(i + 1)}
-                desabilitada={!editavel}
-                preenchida={i < quantidade}
-                grande={grande}
-                />
+                    key={i}
+                    aoPressionar={() => setQuantidade(i + 1)}
+                    desabilitada={!editavel}
+                    preenchida={i < quantidade}
+                    grande={grande} />
             );
         }
         return listaEstrelas;
@@ -37,6 +35,5 @@ export default function Estrelas({
 const estilos =  StyleSheet.create({
     estrelas: {
         flexDirection: "row",
-        marginRight: 2,
-    }
-})
+    },
+});

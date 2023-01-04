@@ -4,7 +4,12 @@ import { TouchableOpacity, Image, StyleSheet } from "react-native";
 import estrela from '../../assets/estrela.png';
 import estrelaCinza from '../../assets/estrelaCinza.png'
 
-export default function Estrela({onPress, desabilitada = true, preenchida, grande = false}){
+export default function Estrela({
+    aoPressionar, 
+    desabilitada = true, 
+    preenchida, 
+    grande = false,
+}){
     const estilos = estilosFuncao(grande);
     
     const getImagem = () => {
@@ -15,7 +20,7 @@ export default function Estrela({onPress, desabilitada = true, preenchida, grand
     }
     
     return <TouchableOpacity
-                onPress={onPress}
+                onPress={aoPressionar}
                 disabled={desabilitada}
                 >
                 <Image source={getImagem()} style={estilos.estrela}/>
@@ -26,6 +31,7 @@ export default function Estrela({onPress, desabilitada = true, preenchida, grand
 const estilosFuncao = (grande) => StyleSheet.create({
     estrela: {
         width: grande ? 36 : 12,
-        height: grande ? 36 : 12
+        height: grande ? 36 : 12,
+        marginRight: 2
     }
 })
