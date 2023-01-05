@@ -5,8 +5,8 @@ import Texto from '../../componentes/Texto';
 
 import Topo from '../../componentes/Topo';
 import useTextos from '../../hooks/useTextos';
-import Detalhes from '../../telas/Home/Cesta/componentes/Detalhes';
-import Item from '../../telas/Home/Cesta/componentes/Item';
+import Detalhes from './componentes/Detalhes';
+import Item from './componentes/Item';
 
 export default function Cesta({ detalhes, itens, produtor }) {
   const { topoCesta, tituloItens } = useTextos();

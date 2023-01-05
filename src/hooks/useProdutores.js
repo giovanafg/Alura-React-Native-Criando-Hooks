@@ -22,5 +22,5 @@ export default function useProdutores(melhoresProdutores){
         setLista(novaLista);
     }, []);
     
-    return [titulo, lista]
+    return lista;
 }

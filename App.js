@@ -1,15 +1,21 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { StatusBar, SafeAreaView } from 'react-native';
+import useProdutores from './src/hooks/useProdutores';
 
-import Home from './src/telas/Home'
+import Home from './src/telas/Home';
 
-function App(){
-  return (
-      <SafeAreaView style={{flex: 1}}>
-    <Home />
+export default function App() {
+  const produtores = useProdutores(false);
+
+  return <SafeAreaView style={{ flex: 1 }}>
+    <StatusBar />
+    <Home melhoresProdutores={false} />
+    {/* {produtores.length > 0 && 
+      <Cesta produtor={{
+        nome: produtores[0].nome, 
+        imagem: produtores[0].imagem
+      }}
+      {...produtores[0].cestas[0]} />
+    } */}
   </SafeAreaView>
-  );
-};
-
-
-export default App;
+}
